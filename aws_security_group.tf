@@ -43,10 +43,10 @@ resource "aws_security_group" "asg" {
   vpc_id      = var.aws_vpc
 
   ingress {
-    description      = "Access from Elastic Load Balancer"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
+    description     = "Access from Elastic Load Balancer"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
     security_groups = [aws_security_group.elb.id]
   }
 

@@ -1,7 +1,7 @@
 locals {
   prefix_name    = format("%s_%s", var.environment, var.service)
   prefix_lb_name = format("%s-%s", var.environment, var.service)
-  
+
   # Regras do security group para o Elastic Load Balancer
   sg_elb_rules_ingress = {
     1 = { description = "Access to HTTP", protocol = "tcp", from_port = "80", to_port = "80", cidr_blocks = ["0.0.0.0/0"] }
